@@ -5,12 +5,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 import json
 from selenium.webdriver.common.action_chains import ActionChains
+import time
 
 
-
-
-
-
+time.sleep(30)
 def saurabh_job():
     print('\n\SAURABH JOB STARTED')
     op = webdriver.ChromeOptions()
