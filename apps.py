@@ -37,11 +37,12 @@ def saurabh_job():
         )
         loadNext.click()
         print('LOAD TO NEXT WEEK')
-        r = 1
+        rows = [2, 1, 6, 7, 8, 9, 10, 11]
+        r = 0
         while True:
             bookingSlot = wait.until(
                 EC.element_to_be_clickable((
-                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(r) + ']/td/div/div[2]/div[7]/a'
+                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[33]/a'
                 ))
             )
             status = bookingSlot.get_attribute('title').strip().split(' - ')
@@ -50,6 +51,8 @@ def saurabh_job():
                 print('BOOKING SLOT IS SELECTED')
                 break
             r += 1
+            if r == len(rows):
+                exit()
         submitButton = wait.until(
             EC.element_to_be_clickable((
                 By.XPATH, '//*[@id="submit_times"]'
@@ -113,11 +116,13 @@ def priyanka_job():
         )
         loadNext.click()
         print('LOAD TO NEXT WEEK')
-        r = 1
+        rows = [2, 1, 6, 7, 8, 9, 10, 11]
+        r = 0
         while True:
             bookingSlot = wait.until(
                 EC.element_to_be_clickable((
-                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(r) + ']/td/div/div[2]/div[7]/a'
+                    
+                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[24]/a'
                 ))
             )
             status = bookingSlot.get_attribute('title').strip().split(' - ')
@@ -126,6 +131,8 @@ def priyanka_job():
                 print('BOOKING SLOT IS SELECTED')
                 break
             r += 1
+            if r == len(rows):
+                exit()
         submitButton = wait.until(
             EC.element_to_be_clickable((
                 By.XPATH, '//*[@id="submit_times"]'
