@@ -24,8 +24,8 @@ def saurabh_job():
     link = 'https://asu.libcal.com/reserve/hayden-study'
     wait = WebDriverWait(driver, 30)
     try:
-        testLink = 'https://asu.libcal.com/reserve/noble'
-        # testLink = 'https://asu.libcal.com/reserve/hayden-study'
+        # testLink = 'https://asu.libcal.com/reserve/noble'
+        testLink = 'https://asu.libcal.com/reserve/hayden-study'
         
         driver.get(testLink)
         print('LIB PAGE OPENED')
@@ -100,11 +100,11 @@ def priyanka_job():
     driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'), chrome_options=op)
     actions = ActionChains(driver)
 
-    link = 'https://asu.libcal.com/reserve/hayden-study'
+    # link = 'https://asu.libcal.com/reserve/hayden-study'
     wait = WebDriverWait(driver, 30)
     try:
-        testLink = 'https://asu.libcal.com/reserve/noble'
-        # testLink = 'https://asu.libcal.com/reserve/hayden-study'
+        # testLink = 'https://asu.libcal.com/reserve/noble'
+        testLink = 'https://asu.libcal.com/reserve/hayden-study'
         
         driver.get(testLink)
         print('LIB PAGE OPENED')
@@ -121,7 +121,6 @@ def priyanka_job():
         while True:
             bookingSlot = wait.until(
                 EC.element_to_be_clickable((
-                    
                     By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[24]/a'
                 ))
             )
