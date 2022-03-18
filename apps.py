@@ -27,13 +27,13 @@ def saurabh_job():
         
         driver.get(testLink)
         print('LIB PAGE OPENED')
-        
-        loadNext = wait.until(
-            EC.element_to_be_clickable((
-                By.XPATH, '//*[@id="eq-time-grid"]/div[1]/div[1]/div/button[2]'
-            ))
-        )
-        loadNext.click()
+        for _ in range(2):
+            loadNext = wait.until(
+                EC.element_to_be_clickable((
+                    By.XPATH, '//*[@id="eq-time-grid"]/div[1]/div[1]/div/button[2]'
+                ))
+            )
+            loadNext.click()
         print('LOAD TO NEXT WEEK')
         rows = [2, 1, 6, 7, 8, 9, 10, 11]
         r = 0
