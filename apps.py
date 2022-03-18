@@ -8,7 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 
-time.sleep(30)
+time.sleep(120)
 def saurabh_job():
     print('\n\SAURABH JOB STARTED')
     op = webdriver.ChromeOptions()
