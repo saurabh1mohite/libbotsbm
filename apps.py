@@ -35,15 +35,16 @@ def saurabh_job():
             )
             loadNext.click()
         print('LOAD TO NEXT WEEK')
-        rows = [2, 1, 6, 7, 8, 9, 10, 11]
+        rows = [6, 7, 9, 10, 8, 12, 13, 14, 15, 16, 17, 2, 1, 3]
         r = 0
         while True:
             bookingSlot = wait.until(
                 EC.element_to_be_clickable((
-                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[33]/a'
+                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[73]/a'
                 ))
             )
             status = bookingSlot.get_attribute('title').strip().split(' - ')
+            print(status)
             if status[-1][0] == 'A':
                 bookingSlot.click()
                 print('BOOKING SLOT IS SELECTED')
@@ -58,28 +59,27 @@ def saurabh_job():
         )
         submitButton.click()
         print('SUBMIT')
-        continueButton = wait.until(
-            EC.element_to_be_clickable((
-                By.XPATH, '//*[@id="terms_accept"]'
-            ))
-        )
-        continueButton.click()
-
         submitButton = wait.until(
             EC.element_to_be_clickable((
                 By.XPATH, '//*[@id="btn-form-submit"]'
             ))
         )
+        print('SUBMIT Button found')
         firstName = driver.find_element_by_id('fname')
+        print('fname found')
         lastName = driver.find_element_by_id('lname')
+        print('lname found')
         email = driver.find_element_by_id('email')
+        print('email found')
         asuID = driver.find_element_by_id('q1546')
+        print('asu id found')
         print('PERSONAL INFO ENTERED')
         firstName.send_keys('Saurabh Balasaheb')
         lastName.send_keys('Mohite')        
         email.send_keys('smohite4@asu.edu')
         asuID.send_keys('1223354340')
         submitButton.click()
+        time.sleep(4)
     finally:
         try:
             driver.quit()
@@ -106,23 +106,24 @@ def priyanka_job():
         
         driver.get(testLink)
         print('LIB PAGE OPENED')
-        
-        loadNext = wait.until(
-            EC.element_to_be_clickable((
-                By.XPATH, '//*[@id="eq-time-grid"]/div[1]/div[1]/div/button[2]'
-            ))
-        )
-        loadNext.click()
+        for _ in range(2):
+            loadNext = wait.until(
+                EC.element_to_be_clickable((
+                    By.XPATH, '//*[@id="eq-time-grid"]/div[1]/div[1]/div/button[2]'
+                ))
+            )
+            loadNext.click()
         print('LOAD TO NEXT WEEK')
-        rows = [2, 1, 6, 7, 8, 9, 10, 11]
+        rows = [6, 7, 9, 10, 8, 12, 13, 14, 15, 16, 17, 2, 1, 3]
         r = 0
         while True:
             bookingSlot = wait.until(
                 EC.element_to_be_clickable((
-                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[24]/a'
+                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[81]/a'
                 ))
             )
             status = bookingSlot.get_attribute('title').strip().split(' - ')
+            print(status)
             if status[-1][0] == 'A':
                 bookingSlot.click()
                 print('BOOKING SLOT IS SELECTED')
@@ -137,22 +138,20 @@ def priyanka_job():
         )
         submitButton.click()
         print('SUBMIT')
-        continueButton = wait.until(
-            EC.element_to_be_clickable((
-                By.XPATH, '//*[@id="terms_accept"]'
-            ))
-        )
-        continueButton.click()
-
         submitButton = wait.until(
             EC.element_to_be_clickable((
                 By.XPATH, '//*[@id="btn-form-submit"]'
             ))
         )
+        print('SUBMIT Button found')
         firstName = driver.find_element_by_id('fname')
+        print('fname found')
         lastName = driver.find_element_by_id('lname')
+        print('lname found')
         email = driver.find_element_by_id('email')
+        print('email found')
         asuID = driver.find_element_by_id('q1546')
+        print('asu id found')
         print('PERSONAL INFO ENTERED')
         firstName.send_keys('Priyanka Shivaji')
         lastName.send_keys('Rothe')        
