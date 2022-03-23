@@ -52,6 +52,7 @@ def saurabh_job():
             r += 1
             if r == len(rows):
                 exit()
+        driver.save("Slotselected.png")
         submitButton = wait.until(
             EC.element_to_be_clickable((
                 By.XPATH, '//*[@id="submit_times"]'
@@ -59,12 +60,14 @@ def saurabh_job():
         )
         submitButton.click()
         print('SUBMIT')
+        
         submitButton = wait.until(
             EC.element_to_be_clickable((
                 By.XPATH, '//*[@id="btn-form-submit"]'
             ))
         )
         print('SUBMIT Button found')
+        driver.save_screenshot('submitForm.png')
         firstName = driver.find_element_by_id('fname')
         print('fname found')
         lastName = driver.find_element_by_id('lname')
