@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import json
 from selenium.webdriver.common.action_chains import ActionChains
 import time
-
+# CHROMEDRIVER_PATH = 'D:/Django/LibBot/libbot/test/chromedriver.exe'
 
 time.sleep(120)
 def saurabh_job():
