@@ -217,3 +217,6 @@ while result == False:
     result = priyanka_job()
     print('PRIYANKA JOB-'+str(i) + ' ', result)
 print('PRIYANKA JOB DONE')
+
+
+exit(0)
