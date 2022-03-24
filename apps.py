@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import json
 from selenium.webdriver.common.action_chains import ActionChains
 import time
-# CHROMEDRIVER_PATH = 'D:/Django/LibBot/libbot/test/chromedriver.exe'
+CHROMEDRIVER_PATH = 'D:/Django/LibBot/libbot/test/chromedriver.exe'
 
 time.sleep(120)
 def saurabh_job():
@@ -16,7 +16,12 @@ def saurabh_job():
     op.add_argument('--headless')
     op.add_argument('--no-sandbox')
     op.add_argument('--disable-dev-sh-usage')
+    
+    # driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=op)
+    
     driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'), chrome_options=op)
+    driver.maximize_window()
+    
     actions = ActionChains(driver)
 
     link = 'https://asu.libcal.com/reserve/hayden-study'
@@ -37,22 +42,34 @@ def saurabh_job():
         print('LOAD TO NEXT WEEK')
         rows = [6, 7, 9, 10, 8, 12, 13, 14, 15, 16, 17, 2, 1, 3]
         r = 0
+        # //*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[9]/td/div/div[2]/div[73]/a
         while True:
+            xpath = '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[81]/a'
             bookingSlot = wait.until(
                 EC.element_to_be_clickable((
-                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[73]/a'
+                    By.XPATH, xpath
                 ))
             )
             status = bookingSlot.get_attribute('title').strip().split(' - ')
             print(status)
+            # time.sleep(100)
             if status[-1][0] == 'A':
-                bookingSlot.click()
+                print(xpath)
+                try:
+                    bookingSlot.send_keys('\n')
+                except:
+                    print('Booking Slot Click is Broken')
+                    exit()
+
+                # time.sleep(10)
                 print('BOOKING SLOT IS SELECTED')
                 break
             r += 1
-            if r == len(rows):
+            if r == len(rows)-1:
+                print('EXITING CODE')
                 exit()
-        driver.save("Slotselected.png")
+        print('EXIT WHILE')
+        # time.sleep(10)
         submitButton = wait.until(
             EC.element_to_be_clickable((
                 By.XPATH, '//*[@id="submit_times"]'
@@ -67,7 +84,6 @@ def saurabh_job():
             ))
         )
         print('SUBMIT Button found')
-        driver.save_screenshot('submitForm.png')
         firstName = driver.find_element_by_id('fname')
         print('fname found')
         lastName = driver.find_element_by_id('lname')
@@ -98,7 +114,11 @@ def priyanka_job():
     op.add_argument('--headless')
     op.add_argument('--no-sandbox')
     op.add_argument('--disable-dev-sh-usage')
+    # driver = webdriver.Chrome(CHROMEDRIVER_PATH, chrome_options=op)
+
     driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'), chrome_options=op)
+    driver.maximize_window()
+    
     actions = ActionChains(driver)
 
     # link = 'https://asu.libcal.com/reserve/hayden-study'
@@ -117,18 +137,25 @@ def priyanka_job():
             )
             loadNext.click()
         print('LOAD TO NEXT WEEK')
-        rows = [6, 7, 9, 10, 8, 12, 13, 14, 15, 16, 17, 2, 1, 3]
+        rows = [6, 7, 9, 10, 8, 12, 13, 14, 15, 16, 17, 2, 1, 3, 4, 5, 11, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
         r = 0
         while True:
             bookingSlot = wait.until(
                 EC.element_to_be_clickable((
-                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[81]/a'
+                    By.XPATH, '//*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[' + str(rows[r]) + ']/td/div/div[2]/div[73]/a'
                 ))
             )
             status = bookingSlot.get_attribute('title').strip().split(' - ')
             print(status)
             if status[-1][0] == 'A':
-                bookingSlot.click()
+                try:
+                    # actions.click(on_element=bookingSlot).perform()
+                    # bookingSlot.click()
+                    bookingSlot.send_keys('\n')
+                except:
+                    print('Booking Slot Click is Broken')
+                    exit()
+                # bookingSlot.click()
                 print('BOOKING SLOT IS SELECTED')
                 break
             r += 1
