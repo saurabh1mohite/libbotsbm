@@ -8,7 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 CHROMEDRIVER_PATH = 'D:/Django/LibBot/libbot/test/chromedriver.exe'
 
-time.sleep(120)
+time.sleep(30)
 def saurabh_job():
     print('\n\SAURABH JOB STARTED')
     op = webdriver.ChromeOptions()
