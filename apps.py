@@ -40,7 +40,7 @@ def saurabh_job():
             )
             loadNext.click()
         print('LOAD TO NEXT WEEK')
-        rows = [6, 7, 9, 10, 8, 12, 13, 14, 15, 16, 17, 2, 1, 3]
+        rows = [7, 6, 9, 10, 8, 12, 13, 14, 15, 16, 17, 2, 1, 3]
         r = 0
         # //*[@id="eq-time-grid"]/div[2]/div/table/tbody/tr/td[3]/div/div/div/table/tbody/tr[9]/td/div/div[2]/div[73]/a
         while True:
@@ -137,7 +137,7 @@ def priyanka_job():
             )
             loadNext.click()
         print('LOAD TO NEXT WEEK')
-        rows = [6, 7, 9, 10, 8, 12, 13, 14, 15, 16, 17, 2, 1, 3, 4, 5, 11, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+        rows = [7, 6, 9, 10, 8, 12, 13, 14, 15, 16, 17, 2, 1, 3, 4, 5, 11, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
         r = 0
         while True:
             bookingSlot = wait.until(
