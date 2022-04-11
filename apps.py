@@ -220,22 +220,22 @@ while result == False:
 print('PRIYANKA JOB DONE')
 
 
-i = 0
-print('SAURABH NOBEL JOB STARTED')
-result = saurabh_job()
-print('SAURABH NOBEL JOB-'+str(i) + ' ', result)
-while result == False:
-    i += 1
-    result = saurabh_job()
-    print('SAURABH NOBEL JOB-'+str(i) + ' ', result)
-print('SAURABH NOBEL JOB DONE')
+# i = 0
+# print('SAURABH NOBEL JOB STARTED')
+# result = saurabh_job()
+# print('SAURABH NOBEL JOB-'+str(i) + ' ', result)
+# while result == False:
+#     i += 1
+#     result = saurabh_job()
+#     print('SAURABH NOBEL JOB-'+str(i) + ' ', result)
+# print('SAURABH NOBEL JOB DONE')
 
-i = 0
-print('PRIYANKA NOBEL JOB STARTED')
-result = priyanka_job()
-print('PRIYANKA NOBEL JOB-'+str(i) + ' ', result)
-while result == False:
-    i += 1
-    result = priyanka_job()
-    print('PRIYANKA NOBEL JOB-'+str(i) + ' ', result)
-print('PRIYANKA NOBEL JOB DONE')
+# i = 0
+# print('PRIYANKA NOBEL JOB STARTED')
+# result = priyanka_job()
+# print('PRIYANKA NOBEL JOB-'+str(i) + ' ', result)
+# while result == False:
+#     i += 1
+#     result = priyanka_job()
+#     print('PRIYANKA NOBEL JOB-'+str(i) + ' ', result)
+# print('PRIYANKA NOBEL JOB DONE')
