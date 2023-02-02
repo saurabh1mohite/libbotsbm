@@ -86,7 +86,6 @@ def book_slot():
     finally:
         try:
             driver.quit()
-            print(bookingSlot)
             return True
         except:
             return False
